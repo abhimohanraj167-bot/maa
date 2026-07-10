@@ -8,13 +8,13 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(135deg, #ffb6c1, #ff69b4, #ffc0cb);
+  background: #ffc0cb; /* Solid pink */
   overflow: hidden;
-  color: white;
+  color: #333; /* Dark text for visibility */
   text-align: center;
 }
 
-/* Glass effect box */
+/* Slides */
 .slide {
   position: absolute;
   width: 100%;
@@ -31,15 +31,16 @@ body {
 }
 
 @keyframes fade {
-  from {opacity: 0; transform: scale(0.9);}
-  to {opacity: 1; transform: scale(1);}
+  from {opacity: 0;}
+  to {opacity: 1;}
 }
 
+/* Box */
 .box {
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.9);
   padding: 30px;
   border-radius: 20px;
-  backdrop-filter: blur(10px);
+  max-width: 80%;
 }
 
 /* Button */
@@ -47,8 +48,8 @@ button {
   padding: 12px 25px;
   border: none;
   border-radius: 25px;
-  background: white;
-  color: #ff1493;
+  background: #ff4d6d;
+  color: white;
   font-size: 16px;
   cursor: pointer;
   margin-top: 20px;
@@ -57,9 +58,9 @@ button {
 /* Hearts */
 .heart {
   position: absolute;
-  width: 18px;
-  height: 18px;
-  background: #ff69b4;
+  width: 15px;
+  height: 15px;
+  background: #ff4d6d;
   transform: rotate(45deg);
   animation: float 6s linear infinite;
 }
@@ -68,14 +69,14 @@ button {
 .heart::after {
   content: "";
   position: absolute;
-  width: 18px;
-  height: 18px;
-  background: #ff69b4;
+  width: 15px;
+  height: 15px;
+  background: #ff4d6d;
   border-radius: 50%;
 }
 
-.heart::before { top: -9px; }
-.heart::after { left: -9px; }
+.heart::before { top: -7px; }
+.heart::after { left: -7px; }
 
 @keyframes float {
   0% { transform: translateY(100vh) rotate(45deg); opacity:1;}
@@ -138,7 +139,7 @@ function nextSlide() {
 }
 
 /* Hearts */
-for (let i = 0; i < 25; i++) {
+for (let i = 0; i < 20; i++) {
   let heart = document.createElement("div");
   heart.className = "heart";
   heart.style.left = Math.random() * 100 + "vw";
